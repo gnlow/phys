@@ -28,14 +28,16 @@ export class Quadratic extends Polynomial {
 
     solve(y: Y = 0) {
         const [c, b, a] = this.coeffs
-        const p = b^2 - 4*a*(c-y)
+        const p = b**2 - 4*a*(c-y)
         if (p > 0) {
             return [
-                (-b + p)/(2*a),
-                (-b - p)/(2*a),
+                (-b + Math.sqrt(p))/(2*a),
+                (-b - Math.sqrt(p))/(2*a),
             ] as X[]
+        } else if (p == 0) {
+            return [(-b + Math.sqrt(p))/(2*a)] as X[]
         } else {
-            return [(-b + p)/(2*a)] as X[]
+            return []
         }
     }
 }
