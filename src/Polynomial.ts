@@ -26,7 +26,7 @@ export class Polynomial {
 export class Quadratic extends Polynomial {
     declare coeffs: [number, number, number]
 
-    solve(y = 0) {
+    solve(y: Y = 0) {
         const [c, b, a] = this.coeffs
         const p = b^2 - 4*a*(c-y)
         if (p > 0) {
