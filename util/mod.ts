@@ -16,6 +16,10 @@ export const cos =
 (deg: number) =>
     Math.cos(degToRad(deg))
 
+export const tan =
+(deg: number) =>
+    Math.tan(degToRad(deg))
+
 export const asin =
 (n: number) =>
     radToDeg(Math.asin(n))
@@ -24,9 +28,6 @@ export const acos =
 (n: number) =>
     radToDeg(Math.acos(n))
 
-export namespace Deg {
-    export const lift =
-    (f: (rad: number) => number) =>
-    (deg: number) =>
-        radToDeg(f(degToRad(deg)))
-}
+export const atan =
+(n: number) =>
+    radToDeg(Math.atan(n))
