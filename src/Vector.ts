@@ -9,10 +9,10 @@ export class Vector<N> {
         return this.values[i]
     }
     add(v: Vector<N>) {
-        return new Vector(
+        return new Vector<N>(
             this.values.map((_, i) =>
                 this.at(i) + v.at(i)
-            )
+            ) as number[] & { length: N }
         )
     }
     mul(n: number) {
