@@ -16,10 +16,10 @@ export class Vector<N> {
         )
     }
     mul(n: number) {
-        return new Vector(
+        return new Vector<N>(
             this.values.map((_, i) =>
                 this.at(i) * n
-            )
+            ) as number[] & { length: N }
         )
     }
     get size() {
@@ -27,7 +27,7 @@ export class Vector<N> {
     }
 
     static fromDeg(deg: number) {
-        return new Vector([
+        return new Vector<2>([
             Math.cos(degToRad(deg)),
             Math.sin(degToRad(deg)),
         ])
