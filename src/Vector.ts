@@ -59,10 +59,17 @@ export class Vector<N> {
 }
 
 export type Vec<N> = Vector<N>
+export type Vec2 = Vec<2>
+export type Vec3 = Vec<3>
+export type Vec4 = Vec<4>
 
 export const vec =
 <N>
 (...values: number[] & { length: N }) =>
     new Vector<N>(values)
+
+export const vec2 = vec<2>
+export const vec3 = vec<3>
+export const vec4 = vec<4>
 
 export const theta = Vector.fromDeg
