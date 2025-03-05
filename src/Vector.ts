@@ -26,6 +26,10 @@ export class Vector<N> {
         return Math.hypot(...this.values)
     }
 
+    clone() {
+        return new Vector([...this.values]) as Vector<N>
+    }
+
     static fromDeg(deg: number) {
         return new Vector<2>([
             Math.cos(degToRad(deg)),
