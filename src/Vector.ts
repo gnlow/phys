@@ -26,6 +26,9 @@ export class Vector<N> {
         return Math.hypot(...this.values)
     }
 
+    normalize() {
+        return this.mul(1/this.size)
+    }
     clone() {
         return new Vector([...this.values]) as Vector<N>
     }
