@@ -15,12 +15,21 @@ export class Vector<N> {
             ) as number[] & { length: N }
         )
     }
+    sub(v: Vector<N>) {
+        return this.add(v.mul(-1))
+    }
     mul(n: number) {
         return new Vector<N>(
             this.values.map((_, i) =>
                 this.at(i) * n
             ) as number[] & { length: N }
         )
+    }
+    div(n: number) {
+        return this.mul(1/n)
+    }
+    distance(v: Vector<N>) {
+        return this.sub(v).size
     }
     get size() {
         return Math.hypot(...this.values)
