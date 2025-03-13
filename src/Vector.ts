@@ -28,6 +28,9 @@ export class Vector<N> {
     div(n: number) {
         return this.mul(1/n)
     }
+    dot(v: Vector<N>) {
+        return this.values.reduce((a, b, i) => a + b*v.at(i), 0)
+    }
     distance(v: Vector<N>) {
         return this.sub(v).size
     }
